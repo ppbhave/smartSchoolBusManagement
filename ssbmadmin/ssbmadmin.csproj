@@ -43,6 +43,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -53,6 +81,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -188,7 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -204,16 +232,132 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Scripts\AjaxCalls\FireBaseConfig.js" />
+    <Content Include="Scripts\AjaxCalls\master.js" />
+    <Content Include="Scripts\AjaxCalls\messegesFire.js" />
+    <Content Include="Scripts\AjaxCalls\TrackBusLocation.js" />
+    <Content Include="TrackLocationByBus.aspx" />
+    <Content Include="Content\cssBlocks.css" />
+    <Content Include="Content\MapView.css" />
+    <Content Include="Scripts\AjaxCalls\AddRoutes.js" />
+    <Content Include="Scripts\AjaxCalls\busesAndStops.js" />
+    <Content Include="Scripts\AjaxCalls\displayBusRoute.js" />
+    <Content Include="Scripts\AjaxCalls\Home.js" />
+    <Content Include="Scripts\AjaxCalls\getVaidRouteBuses.js" />
+    <Content Include="Scripts\AjaxCalls\mapViewbasics.js" />
+    <Content Include="Scripts\AjaxCalls\setStudentStops.js" />
+    <Content Include="Scripts\AjaxCalls\studAttendence.js" />
+    <Content Include="Scripts\AjaxCalls\AttendenceRecords.js" />
+    <Content Include="Scripts\AjaxCalls\fromhomeattendentDuty.js" />
+    <Content Include="Scripts\AjaxCalls\attendentDuty.js" />
+    <Content Include="Scripts\AjaxCalls\studParentMapping.js" />
+    <Content Include="Scripts\AjaxCalls\ValidationForm.js" />
+    <Content Include="Scripts\AjaxCalls\UpdateDriver.js" />
+    <Content Include="UpdateDriver.aspx" />
+    <Content Include="Scripts\AjaxCalls\UpdateAttedent.js" />
+    <Content Include="UpdateAttendent.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\forms.css" />
+    <Content Include="Content\modalAndOther.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="DriverTable.aspx" />
+    <Content Include="ExistingBuses.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Home.aspx" />
+    <Content Include="jquery-ui-1.12.1\images\bus.png" />
+    <Content Include="jquery-ui-1.12.1\package.json" />
+    <Content Include="Scripts\AjaxCalls\BusesTable.js" />
+    <Content Include="Scripts\AjaxCalls\AttendentModalCode.js" />
+    <Content Include="Scripts\AjaxCalls\ExistingAttendent.js" />
+    <Content Include="Scripts\AjaxCalls\getBusesInsideSelect.js" />
+    <Content Include="Scripts\AjaxCalls\studBusMapping.js" />
+    <Content Include="Scripts\AjaxCalls\GuardianStudentStudentList.js" />
+    <Content Include="Scripts\AjaxCalls\GuardianStudentParentList.js" />
+    <Content Include="Scripts\AjaxCalls\GuardianMapping.js" />
+    <Content Include="Scripts\AjaxCalls\driverModalCode.js" />
+    <Content Include="Scripts\AjaxCalls\DriverBusList.js" />
+    <Content Include="Scripts\AjaxCalls\ParentStudentList.js" />
+    <Content Include="Scripts\AjaxCalls\existingParent.js" />
+    <Content Include="Scripts\AjaxCalls\existingStudents.js" />
+    <Content Include="Scripts\AjaxCalls\parentModalCode .js" />
+    <Content Include="Scripts\AjaxCalls\studentClassFilter.js" />
+    <Content Include="Scripts\AjaxCalls\StudentTable.js" />
+    <Content Include="Scripts\AjaxCalls\studentModalCode.js" />
+    <Content Include="Scripts\AjaxCalls\RoutesList.js" />
+    <Content Include="Scripts\AjaxCalls\ExistingDriver.js" />
+    <Content Include="Scripts\AjaxCalls\UpdateStudent.js" />
+    <Content Include="Scripts\AjaxCalls\UpdateParent.js" />
+    <Content Include="UpdateStudent.aspx" />
+    <Content Include="ExistingDrivers.aspx" />
+    <Content Include="RoutesList.aspx" />
+    <Content Include="UpdateParent.aspx" />
+    <Content Include="BusesTable.aspx" />
+    <Content Include="ExistingStudents.aspx" />
+    <Content Include="StudentTable.aspx" />
+    <Content Include="GuardianStudent.aspx" />
+    <Content Include="ExistingParents.aspx" />
+    <Content Include="ParentStudList.aspx" />
+    <Content Include="StudentBusmap.aspx" />
+    <Content Include="ExistingAttendents.aspx" />
+    <Content Include="fromStudtoParent.aspx" />
+    <Content Include="DutyAttendent.aspx" />
+    <Content Include="attendentDuty.aspx" />
+    <Content Include="fromHometoAttendentDuty.aspx" />
+    <Content Include="AttendenceRecords.aspx" />
+    <Content Include="studAttendence.aspx" />
+    <Content Include="SetStudentStops.aspx" />
+    <Content Include="AddRoute.aspx" />
+    <Content Include="displayBusRouts.aspx" />
+    <Content Include="busesandStops.aspx" />
+    <None Include="Properties\PublishProfiles\pbhave.pubxml" />
+    <None Include="Properties\PublishProfiles\WebHost.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="AttendantReg.aspx" />
+    <Content Include="DriverReg.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ParentReg.aspx" />
+    <Content Include="Scripts\AjaxCalls\AddAttendent.js" />
+    <Content Include="Scripts\AjaxCalls\AddDriver.js" />
+    <Content Include="Scripts\AjaxCalls\AddParent.js" />
+    <Content Include="Scripts\AjaxCalls\AddStudent.js" />
+    <Content Include="Scripts\AjaxCalls\GetBusbyId.js" />
+    <Content Include="Scripts\AjaxCalls\DriverTable.js" />
+    <Content Include="Scripts\AjaxCalls\MapParent.js" />
+    <Content Include="Scripts\AjaxCalls\ExistingBuses.js" />
+    <Content Include="Studentadd.aspx" />
+    <Content Include="jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\AjaxCalls\getBuses.js" />
+    <Content Include="Scripts\AjaxCalls\GetEntityJS.js" />
+    <Content Include="Scripts\AjaxCalls\TBus.js" />
+    <Content Include="Scripts\AjaxCalls\TRoute.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -248,13 +392,19 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="Views\web.config" />
+    <Content Include="ssbm.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ssbm.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -265,106 +415,152 @@
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Confirm.aspx.designer.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Lockout.aspx.designer.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\ManageLogins.aspx.cs">
       <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\ManageLogins.aspx.designer.cs">
       <DependentUpon>ManageLogins.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\ManagePassword.aspx.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\ManagePassword.aspx.designer.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="APIErrors.cs" />
+    <Compile Include="ApiProvider.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLLFiles\BLL_Grievances.cs" />
+    <Compile Include="BLLFiles\BLL_BusLocation.cs" />
+    <Compile Include="TrackLocationByBus.aspx.cs">
+      <DependentUpon>TrackLocationByBus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrackLocationByBus.aspx.designer.cs">
+      <DependentUpon>TrackLocationByBus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TBusLocationController.cs" />
+    <Compile Include="Controllers\TGrievancesController.cs" />
+    <Compile Include="Models\busLocationModel.cs" />
+    <Compile Include="Models\grievanceModel.cs" />
+    <Compile Include="UpdateDriver.aspx.cs">
+      <DependentUpon>UpdateDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDriver.aspx.designer.cs">
+      <DependentUpon>UpdateDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAttendent.aspx.cs">
+      <DependentUpon>UpdateAttendent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAttendent.aspx.designer.cs">
+      <DependentUpon>UpdateAttendent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLLFiles\BLL_Absenty.cs" />
+    <Compile Include="BLLFiles\BLL_Attendence.cs" />
+    <Compile Include="BLLFiles\Bll_Detail.cs" />
+    <Compile Include="BLLFiles\Bll_Duty.cs" />
+    <Compile Include="BLLFiles\Bll_entity.cs" />
+    <Compile Include="BLLFiles\BLL_Login.cs" />
+    <Compile Include="BLLFiles\BLL_Mapping.cs" />
+    <Compile Include="BLLFiles\BLL_TBus.cs" />
+    <Compile Include="BLLFiles\BLL_TRoute.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,6 +568,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\TDetailsController.cs" />
+    <Compile Include="Controllers\TRoutesController.cs" />
+    <Compile Include="Controllers\TAbsentyController.cs" />
+    <Compile Include="Controllers\TAttendenceController.cs" />
+    <Compile Include="Controllers\TAttendentDutyController.cs" />
+    <Compile Include="Controllers\TBusController.cs" />
+    <Compile Include="Controllers\TEntityController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,10 +582,78 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DriverTable.aspx.cs">
+      <DependentUpon>DriverTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverTable.aspx.designer.cs">
+      <DependentUpon>DriverTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingBuses.aspx.cs">
+      <DependentUpon>ExistingBuses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistingBuses.aspx.designer.cs">
+      <DependentUpon>ExistingBuses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="AttendantReg.aspx.cs">
+      <DependentUpon>AttendantReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AttendantReg.aspx.designer.cs">
+      <DependentUpon>AttendantReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverReg.aspx.cs">
+      <DependentUpon>DriverReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverReg.aspx.designer.cs">
+      <DependentUpon>DriverReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuardianModel.cs" />
+    <Compile Include="Models\DriverBus.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\StopsModel.cs" />
+    <Compile Include="Models\Stud_BusModel.cs" />
+    <Compile Include="ParentReg.aspx.cs">
+      <DependentUpon>ParentReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParentReg.aspx.designer.cs">
+      <DependentUpon>ParentReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Studentadd.aspx.cs">
+      <DependentUpon>Studentadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Studentadd.aspx.designer.cs">
+      <DependentUpon>Studentadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetailModel.cs" />
+    <Compile Include="Models\DutyModal.cs" />
+    <Compile Include="Models\EntityModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\TAbsentyModal.cs" />
+    <Compile Include="Models\TAttendenceModal.cs" />
+    <Compile Include="Models\TBusModal.cs" />
+    <Compile Include="Models\TRouteModal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -393,21 +664,192 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="ssbm.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ssbm.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="StorageMgr.cs" />
+    <Compile Include="StorageMgr_DBMSSQL.cs" />
+    <Compile Include="SupportCodes.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateStudent.aspx.cs">
+      <DependentUpon>UpdateStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateStudent.aspx.designer.cs">
+      <DependentUpon>UpdateStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingDrivers.aspx.cs">
+      <DependentUpon>ExistingDrivers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistingDrivers.aspx.designer.cs">
+      <DependentUpon>ExistingDrivers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesList.aspx.cs">
+      <DependentUpon>RoutesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoutesList.aspx.designer.cs">
+      <DependentUpon>RoutesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateParent.aspx.cs">
+      <DependentUpon>UpdateParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateParent.aspx.designer.cs">
+      <DependentUpon>UpdateParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusesTable.aspx.cs">
+      <DependentUpon>BusesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusesTable.aspx.designer.cs">
+      <DependentUpon>BusesTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingStudents.aspx.cs">
+      <DependentUpon>ExistingStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistingStudents.aspx.designer.cs">
+      <DependentUpon>ExistingStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTable.aspx.cs">
+      <DependentUpon>StudentTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentTable.aspx.designer.cs">
+      <DependentUpon>StudentTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuardianStudent.aspx.cs">
+      <DependentUpon>GuardianStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuardianStudent.aspx.designer.cs">
+      <DependentUpon>GuardianStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingParents.aspx.cs">
+      <DependentUpon>ExistingParents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistingParents.aspx.designer.cs">
+      <DependentUpon>ExistingParents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParentStudList.aspx.cs">
+      <DependentUpon>ParentStudList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParentStudList.aspx.designer.cs">
+      <DependentUpon>ParentStudList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentBusmap.aspx.cs">
+      <DependentUpon>StudentBusmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentBusmap.aspx.designer.cs">
+      <DependentUpon>StudentBusmap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingAttendents.aspx.cs">
+      <DependentUpon>ExistingAttendents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistingAttendents.aspx.designer.cs">
+      <DependentUpon>ExistingAttendents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fromStudtoParent.aspx.cs">
+      <DependentUpon>fromStudtoParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fromStudtoParent.aspx.designer.cs">
+      <DependentUpon>fromStudtoParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DutyAttendent.aspx.cs">
+      <DependentUpon>DutyAttendent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DutyAttendent.aspx.designer.cs">
+      <DependentUpon>DutyAttendent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="attendentDuty.aspx.cs">
+      <DependentUpon>attendentDuty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="attendentDuty.aspx.designer.cs">
+      <DependentUpon>attendentDuty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fromHometoAttendentDuty.aspx.cs">
+      <DependentUpon>fromHometoAttendentDuty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fromHometoAttendentDuty.aspx.designer.cs">
+      <DependentUpon>fromHometoAttendentDuty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AttendenceRecords.aspx.cs">
+      <DependentUpon>AttendenceRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AttendenceRecords.aspx.designer.cs">
+      <DependentUpon>AttendenceRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studAttendence.aspx.cs">
+      <DependentUpon>studAttendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studAttendence.aspx.designer.cs">
+      <DependentUpon>studAttendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SetStudentStops.aspx.cs">
+      <DependentUpon>SetStudentStops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SetStudentStops.aspx.designer.cs">
+      <DependentUpon>SetStudentStops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoute.aspx.cs">
+      <DependentUpon>AddRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddRoute.aspx.designer.cs">
+      <DependentUpon>AddRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="displayBusRouts.aspx.cs">
+      <DependentUpon>displayBusRouts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="displayBusRouts.aspx.designer.cs">
+      <DependentUpon>displayBusRouts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="busesandStops.aspx.cs">
+      <DependentUpon>busesandStops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busesandStops.aspx.designer.cs">
+      <DependentUpon>busesandStops.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ssbm.dbml.layout">
+      <DependentUpon>ssbm.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

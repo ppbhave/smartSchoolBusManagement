@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ssbm">
+  <DataContextMoniker Name="/ssbmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6346844b-8868-486e-8fbe-5ccfdcf341aa" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TAbsentyMarking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f01dd14f-46a6-4536-a3ae-4bd4b2add708" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d05075a4-6b0e-433f-80ae-45fef254d1c9" isExpanded="false" absoluteBounds="1.25, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TAttendentDuty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16c7cf0e-c16f-4d6f-ab1f-0514df985c8c" absoluteBounds="1.2650000000000001, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" isExpanded="false" absoluteBounds="0.5, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TBus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09620e55-1099-419d-9311-51089284d7e4" absoluteBounds="0.515, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.65625 : 3.625); (0.65625 : 0.95)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TAbsentyMarking" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="6346844b-8868-486e-8fbe-5ccfdcf341aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8437475 : 3.625); (1.8437475 : 2.7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TAttendentDuty" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="d05075a4-6b0e-433f-80ae-45fef254d1c9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="39a27eeb-598d-4685-8ddd-3c2081c2ebb7" isExpanded="false" absoluteBounds="0.875, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TDriver_Bus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9f2606f-e02a-4a13-acd2-4760450b52a3" absoluteBounds="0.89, 2.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.03125 : 3.625); (1.03125 : 2.075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TDriver_Bus" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="39a27eeb-598d-4685-8ddd-3c2081c2ebb7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7ce5424d-c64d-4189-b814-d27f35a66ec4" isExpanded="false" absoluteBounds="3, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TGuardian" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c10149f2-1a8e-444e-9e70-989b93c3fe85" absoluteBounds="3.0150000000000006, 5.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="99128e6b-b603-4595-abaa-c94ddd0b217b" isExpanded="false" absoluteBounds="0.625, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TStop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1026a643-0a32-49e1-ac8e-41c673ca3533" absoluteBounds="0.64, 4.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d7c46bc-e796-4bbe-8f0b-c1a57ac93c75" isExpanded="false" absoluteBounds="5, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ceb83c7-e1b5-4edc-815d-2bfc8bc4b98b" absoluteBounds="5.015, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd166245-390d-4138-bb4b-8aab456677a6" isExpanded="false" absoluteBounds="4, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TAttendence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e90c6df0-e47c-43cf-bc9a-073dddcba56c" absoluteBounds="4.0150000000000006, 3.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.8187525); (2.66666666666667 : 3.8187525 : JumpStart); (2.83333333333333 : 3.8187525 : JumpEnd); (3.08463769791667 : 3.8187525 : JumpStart); (3.25130436458333 : 3.8187525 : JumpEnd); (3.64713519791667 : 3.8187525 : JumpStart); (3.81380186458333 : 3.8187525 : JumpEnd); (4 : 3.8187525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TAttendence" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="cd166245-390d-4138-bb4b-8aab456677a6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c869a6f2-f4f0-4570-a24a-f04fe66d6b72" isExpanded="false" absoluteBounds="5.125, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TUserStamp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cf40729-c9a9-4684-895d-f26f3ba27b60" absoluteBounds="5.14, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.0625 : 2.25); (6.0625 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TUser/TUser_TUserStamp" />
+      <nodes>
+        <classShapeMoniker Id="8d7c46bc-e796-4bbe-8f0b-c1a57ac93c75" />
+        <classShapeMoniker Id="c869a6f2-f4f0-4570-a24a-f04fe66d6b72" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" isExpanded="false" absoluteBounds="3, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TEntity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9156a7e-1927-4dae-a6ed-38acd4e3d9e2" absoluteBounds="3.015, 1.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 1.25); (2.5 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TAbsentyMarking" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="6346844b-8868-486e-8fbe-5ccfdcf341aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 1.7); (3.125 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TAttendentDuty" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="d05075a4-6b0e-433f-80ae-45fef254d1c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.093752 : 1.7); (4.093752 : 1.918752); (3.72395933333333 : 1.918752 : JumpStart); (3.55729266666667 : 1.918752 : JumpEnd); (3.20833333333333 : 1.918752 : JumpStart); (3.04166666666667 : 1.918752 : JumpEnd); (2.875 : 1.918752)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TDriver_Bus" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="39a27eeb-598d-4685-8ddd-3c2081c2ebb7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 1.4375025); (0.739583333333333 : 1.4375025 : JumpStart); (0.572916666666667 : 1.4375025 : JumpEnd); (0.375 : 1.4375025); (0.375 : 3.375); (0.572916666666667 : 3.375 : JumpStart); (0.739583333333333 : 3.375 : JumpEnd); (0.947916666666667 : 3.375 : JumpStart); (1.11458333333333 : 3.375 : JumpEnd); (1.76041416666667 : 3.375 : JumpStart); (1.92708083333333 : 3.375 : JumpEnd); (2.75 : 3.375); (2.75 : 4.075); (3.08463769791667 : 4.075 : JumpStart); (3.25130436458333 : 4.075 : JumpEnd); (3.36588644791667 : 4.075 : JumpStart); (3.53255311458333 : 4.075 : JumpEnd); (3.64713519791667 : 4.075 : JumpStart); (3.81380186458333 : 4.075 : JumpEnd); (4.021484265625 : 4.075); (4.021484265625 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TGuardian" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="7ce5424d-c64d-4189-b814-d27f35a66ec4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 1.468755); (0.739583333333333 : 1.468755 : JumpStart); (0.572916666666667 : 1.468755 : JumpEnd); (0.5 : 1.468755); (0.5 : 3.40625); (0.572916666666667 : 3.40625 : JumpStart); (0.739583333333333 : 3.40625 : JumpEnd); (0.947916666666667 : 3.40625 : JumpStart); (1.11458333333333 : 3.40625 : JumpEnd); (1.76041416666667 : 3.40625 : JumpStart); (1.92708083333333 : 3.40625 : JumpEnd); (2.75 : 3.40625); (2.75 : 3.95); (3.08463769791667 : 3.95 : JumpStart); (3.25130436458333 : 3.95 : JumpEnd); (3.44921978125 : 3.95); (3.44921978125 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TGuardian1" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="7ce5424d-c64d-4189-b814-d27f35a66ec4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.125 : 1.7); (4.125 : 2.475); (4.79166666666667 : 2.475 : JumpStart); (4.95833333333333 : 2.475 : JumpEnd); (5 : 2.475)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TUser" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="8d7c46bc-e796-4bbe-8f0b-c1a57ac93c75" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 1.7); (4.875 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TAttendence" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="cd166245-390d-4138-bb4b-8aab456677a6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="477f470a-2053-4cc1-9a00-9e8f6b2b80cd" isExpanded="false" absoluteBounds="3, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TEntityDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1131183d-3d44-4263-bc45-953fb5e48e5a" absoluteBounds="3.015, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.0312525 : 1.25); (4.0312525 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TEntityDetail" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="477f470a-2053-4cc1-9a00-9e8f6b2b80cd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a96f2375-d0df-44d5-888e-5b894eef7c69" isExpanded="false" absoluteBounds="2.75, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TStud_Bus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75bf5769-06e5-47f1-95c9-bdce93f5f295" absoluteBounds="2.765, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.625); (2.75 : 3.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TStud_Bus" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="a96f2375-d0df-44d5-888e-5b894eef7c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.625); (2.75 : 3.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TStud_Bus1" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="a96f2375-d0df-44d5-888e-5b894eef7c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.640626 : 1.7); (3.640626 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TStud_Bus" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="a96f2375-d0df-44d5-888e-5b894eef7c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 4.79375); (3.16797103125 : 4.79375); (3.16797103125 : 3.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TStop/TStop_TStud_Bus" />
+      <nodes>
+        <classShapeMoniker Id="99128e6b-b603-4595-abaa-c94ddd0b217b" />
+        <classShapeMoniker Id="a96f2375-d0df-44d5-888e-5b894eef7c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 4.778125); (3.36588644791667 : 4.778125 : JumpStart); (3.53255311458333 : 4.778125 : JumpEnd); (3.73046853125 : 4.778125); (3.73046853125 : 3.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TStop/TStop_TStud_Bus1" />
+      <nodes>
+        <classShapeMoniker Id="99128e6b-b603-4595-abaa-c94ddd0b217b" />
+        <classShapeMoniker Id="a96f2375-d0df-44d5-888e-5b894eef7c69" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="00ec5615-e6ad-46c3-8444-9d3ea6b9d913" isExpanded="false" absoluteBounds="4.375, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TRoute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1118d96-fcbf-470b-8098-b67a226ee8b6" absoluteBounds="4.39, 4.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 4.5375); (4.10481759895833 : 4.5375 : JumpStart); (3.93815093229167 : 4.5375 : JumpEnd); (3.81380186458333 : 4.5375 : JumpStart); (3.64713519791667 : 4.5375 : JumpEnd); (3.53255311458333 : 4.5375 : JumpStart); (3.36588644791667 : 4.5375 : JumpEnd); (3.25130436458333 : 4.5375 : JumpStart); (3.08463769791667 : 4.5375 : JumpEnd); (2.625 : 4.5375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TRoute/TRoute_TStop" />
+      <nodes>
+        <classShapeMoniker Id="00ec5615-e6ad-46c3-8444-9d3ea6b9d913" />
+        <classShapeMoniker Id="99128e6b-b603-4595-abaa-c94ddd0b217b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 4.075); (1.5 : 4.3125); (2.6875 : 4.3125); (2.6875 : 4.362498); (3.08463769791667 : 4.362498 : JumpStart); (3.25130436458333 : 4.362498 : JumpEnd); (3.36588644791667 : 4.362498 : JumpStart); (3.53255311458333 : 4.362498 : JumpEnd); (3.64713519791667 : 4.362498 : JumpStart); (3.81380186458333 : 4.362498 : JumpEnd); (3.93815093229167 : 4.362498 : JumpStart); (4.10481759895833 : 4.362498 : JumpEnd); (4.375 : 4.362498)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TRoute" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="00ec5615-e6ad-46c3-8444-9d3ea6b9d913" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4a7f06d2-48db-49d6-bae2-481d6db8af4c" isExpanded="false" absoluteBounds="0.5, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TGrievance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="960cc256-ba03-4850-a7dd-9ce9bf934359" absoluteBounds="0.51500000000000012, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 1.5000075); (0.739583333333333 : 1.5000075 : JumpStart); (0.572916666666667 : 1.5000075 : JumpEnd); (0.4375 : 1.5000075); (0.4375 : 5.03125); (1.5 : 5.03125); (1.5 : 5.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TEntity/TEntity_TGrievance" />
+      <nodes>
+        <classShapeMoniker Id="4068b3f0-4823-4aeb-a8af-8ad738558b36" />
+        <classShapeMoniker Id="4a7f06d2-48db-49d6-bae2-481d6db8af4c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3f648c24-88a6-44b4-a574-d345a0c503c7" isExpanded="false" absoluteBounds="5.25, 5, 2, 0.45">
+      <DataClassMoniker Name="/ssbmDataContext/TBusLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="107c2b48-61dd-4aa7-a539-19a15880a11e" absoluteBounds="5.265, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.04375); (3.08463769791667 : 4.04375 : JumpStart); (3.25130436458333 : 4.04375 : JumpEnd); (3.36588644791667 : 4.04375 : JumpStart); (3.53255311458333 : 4.04375 : JumpEnd); (3.64713519791667 : 4.04375 : JumpStart); (3.81380186458333 : 4.04375 : JumpEnd); (6.84375 : 4.04375); (6.84375 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ssbmDataContext/TBus/TBus_TBusLocation" />
+      <nodes>
+        <classShapeMoniker Id="6c7dc98d-f0de-46bc-975e-b384a31b9ec4" />
+        <classShapeMoniker Id="3f648c24-88a6-44b4-a574-d345a0c503c7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

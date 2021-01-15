@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ssbm" Class="ssbmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Program Files\Microsoft SQL Server2016\MSSQL13.MSSQLSERVER\MSSQL\DATA\ssbm.mdf&quot;;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ssbmConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TAbsentyMarking" Member="TAbsentyMarkings">
+    <Type Name="TAbsentyMarking">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBus_TAbsentyMarking" Member="TBus" ThisKey="nBusFK" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TEntity_TAbsentyMarking" Member="TEntity" ThisKey="nEntityFK" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAttendentDuty" Member="TAttendentDuties">
+    <Type Name="TAttendentDuty">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dStampStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dtampStop" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBus_TAttendentDuty" Member="TBus" ThisKey="nBusFK" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TEntity_TAttendentDuty" Member="TEntity" ThisKey="nEntityFK" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBus" Member="TBus">
+    <Type Name="TBus">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sRegNo" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="jCapacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBus_TAbsentyMarking" Member="TAbsentyMarkings" ThisKey="n" OtherKey="nBusFK" Type="TAbsentyMarking" />
+      <Association Name="TBus_TAttendentDuty" Member="TAttendentDuties" ThisKey="n" OtherKey="nBusFK" Type="TAttendentDuty" />
+      <Association Name="TBus_TDriver_Bus" Member="TDriver_Bus" ThisKey="n" OtherKey="nBusFk" Type="TDriver_Bus" />
+      <Association Name="TBus_TAttendence" Member="TAttendences" ThisKey="n" OtherKey="nBusFk" Type="TAttendence" />
+      <Association Name="TBus_TStud_Bus" Member="TStud_Bus" ThisKey="n" OtherKey="nBusFKup" Type="TStud_Bus" />
+      <Association Name="TBus_TStud_Bus1" Member="TStud_Bus1" ThisKey="n" OtherKey="nBusFKdown" Type="TStud_Bus" />
+      <Association Name="TBus_TRoute" Member="TRoutes" ThisKey="n" OtherKey="nBusFK" Type="TRoute" />
+      <Association Name="TBus_TBusLocation" Member="TBusLocations" ThisKey="n" OtherKey="nBusFK" Type="TBusLocation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDriver_Bus" Member="TDriver_Bus">
+    <Type Name="TDriver_Bus">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFKDriver" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFk" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBus_TDriver_Bus" Member="TBus" ThisKey="nBusFk" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TEntity_TDriver_Bus" Member="TEntity" ThisKey="nEntityFKDriver" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TGuardian" Member="TGuardians">
+    <Type Name="TGuardian">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFKStudent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nEntityFKParent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TEntity_TGuardian" Member="TEntity" ThisKey="nEntityFKParent" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+      <Association Name="TEntity_TGuardian1" Member="TEntity1" ThisKey="nEntityFKStudent" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TStops" Member="TStops">
+    <Type Name="TStop">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nRouteFK" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="rStopLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rStopLong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="bStaus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TStop_TStud_Bus" Member="TStud_Bus" ThisKey="n" OtherKey="nStopUp" Type="TStud_Bus" />
+      <Association Name="TStop_TStud_Bus1" Member="TStud_Bus1" ThisKey="n" OtherKey="nStopDown" Type="TStud_Bus" />
+      <Association Name="TRoute_TStop" Member="TRoute" ThisKey="nRouteFK" OtherKey="n" Type="TRoute" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUser" Member="TUsers">
+    <Type Name="TUser">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="sPassword" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TUser_TUserStamp" Member="TUserStamps" ThisKey="n" OtherKey="nUserFK" Type="TUserStamp" />
+      <Association Name="TEntity_TUser" Member="TEntity" ThisKey="nEntityFK" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAttendence" Member="TAttendences">
+    <Type Name="TAttendence">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFk" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFk" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="rInLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rInLong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rOutLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rOutLong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dStampIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dStampOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBus_TAttendence" Member="TBus" ThisKey="nBusFk" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TEntity_TAttendence" Member="TEntity" ThisKey="nEntityFk" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUserStamp" Member="TUserStamps">
+    <Type Name="TUserStamp">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nUserFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dLoginStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dLogoutStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TUser_TUserStamp" Member="TUser" ThisKey="nUserFK" OtherKey="n" Type="TUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEntity" Member="TEntities">
+    <Type Name="TEntity">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sFname" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sMname" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sMother" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sLname" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sDOB" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="jAge" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sEmail1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="sContact1" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="sHouse" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="sLocality" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="sAddressLine" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sTaluka" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sDistrict" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sState" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sIdProof" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sIdProofPath" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="jType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TEntity_TAbsentyMarking" Member="TAbsentyMarkings" ThisKey="n" OtherKey="nEntityFK" Type="TAbsentyMarking" />
+      <Association Name="TEntity_TAttendentDuty" Member="TAttendentDuties" ThisKey="n" OtherKey="nEntityFK" Type="TAttendentDuty" />
+      <Association Name="TEntity_TDriver_Bus" Member="TDriver_Bus" ThisKey="n" OtherKey="nEntityFKDriver" Type="TDriver_Bus" />
+      <Association Name="TEntity_TGuardian" Member="TGuardians" ThisKey="n" OtherKey="nEntityFKParent" Type="TGuardian" />
+      <Association Name="TEntity_TGuardian1" Member="TGuardians1" ThisKey="n" OtherKey="nEntityFKStudent" Type="TGuardian" />
+      <Association Name="TEntity_TUser" Member="TUsers" ThisKey="n" OtherKey="nEntityFK" Type="TUser" />
+      <Association Name="TEntity_TAttendence" Member="TAttendences" ThisKey="n" OtherKey="nEntityFk" Type="TAttendence" />
+      <Association Name="TEntity_TEntityDetail" Member="TEntityDetails" ThisKey="n" OtherKey="nEntityFK" Type="TEntityDetail" />
+      <Association Name="TEntity_TStud_Bus" Member="TStud_Bus" ThisKey="n" OtherKey="nEntityFKStudent" Type="TStud_Bus" />
+      <Association Name="TEntity_TGrievance" Member="TGrievances" ThisKey="n" OtherKey="nEntityFK" Type="TGrievance" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEntityDetails" Member="TEntityDetails">
+    <Type Name="TEntityDetail">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sContact2" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="sEmail2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="sClass" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="sLiscence" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sLiscencePath" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TEntity_TEntityDetail" Member="TEntity" ThisKey="nEntityFK" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TStud_Bus" Member="TStud_Bus">
+    <Type Name="TStud_Bus">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFKStudent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFKup" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nStopUp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nBusFKdown" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nStopDown" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBus_TStud_Bus" Member="TBus" ThisKey="nBusFKup" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TBus_TStud_Bus1" Member="TBus1" ThisKey="nBusFKdown" OtherKey="n" Type="TBus" IsForeignKey="true" />
+      <Association Name="TEntity_TStud_Bus" Member="TEntity" ThisKey="nEntityFKStudent" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+      <Association Name="TStop_TStud_Bus" Member="TStop" ThisKey="nStopUp" OtherKey="n" Type="TStop" IsForeignKey="true" />
+      <Association Name="TStop_TStud_Bus1" Member="TStop1" ThisKey="nStopDown" OtherKey="n" Type="TStop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRoutes" Member="TRoutes">
+    <Type Name="TRoute">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nBusFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="rLat1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rLat2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rLong1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rLong2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sTripDetails" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TRoute_TStop" Member="TStops" ThisKey="n" OtherKey="nRouteFK" Type="TStop" />
+      <Association Name="TBus_TRoute" Member="TBus" ThisKey="nBusFK" OtherKey="n" Type="TBus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TGrievances" Member="TGrievances">
+    <Type Name="TGrievance">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nEntityFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TEntity_TGrievance" Member="TEntity" ThisKey="nEntityFK" OtherKey="n" Type="TEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBusLocation" Member="TBusLocations">
+    <Type Name="TBusLocation">
+      <Column Name="n" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nBusFK" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="rLat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rlong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBus_TBusLocation" Member="TBus" ThisKey="nBusFK" OtherKey="n" Type="TBus" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

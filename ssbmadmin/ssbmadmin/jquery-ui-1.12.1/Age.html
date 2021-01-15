@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="D:\Demo\jquery-ui-1.12.1\jquery-ui.css">
+<script src="D:\Demo\jquery-ui-1.12.1\external\jquery\jquery.js"></script>
+<script src="D:\Demo\jquery-ui-1.12.1\jquery-ui.js"></script>
+<!--<script type="text/javascript">
+$(document).ready(function (){
+var age = "";
+	$('#dob').datepicker({
+	onSelect: function (value, ui) {
+		var today = new Date();
+		age = today.getFullYear() - ui.selectedYear;
+		$('#age').val(age);
+		},
+		changeMonth: true,
+		changeYear: true
+		})
+		})
+</script>-->
+<script>
+function frmchar(input) {
+	var regex = /[^a-z]/gi;
+	input.value = input.value.replace(regex,"");
+}
+</script>
+<script type="text/javascript">
+var input = document.getElementById('dob');
+input.oninvalid = function(event) {
+	event.target.setCustomValidity('use characters only');
+	}
+</script>
+</head>
+<body>
+<label> Age Calculation </label>
+<br>
+<label> Date </label>
+<input type="text" id="dob" onkeyup="frmchar(this)" />
+<br>
+<label>Age</label>
+<input type="text" id="age"/>
+<br>
+<input type="button" id="btnSave" value="Save">
+</body>
+</html>
